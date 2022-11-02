@@ -1,0 +1,54 @@
+<div class="upper-pannel-universal">
+
+    <img src="/assets/images/logo.jpg"class="img">
+
+    <!-- Resturant name container -->
+    <div class="restoName">
+        <p style="height:10px;width: 300px;margin-top: 0px;color: aliceblue; font-size: 1.2em;font-family: cursive;">Food Costa</p>
+        <p style="width: 300px;margin-top:  0px;color: aliceblue;font-size: 1.65em;"><u><b>SAVOURY BITES</b></u></p>
+    </div>
+
+    <!-- Options container -->
+    <div class="options">
+        <!-- Sign-In -->
+        <button id="options1" class="options-sub-block" (click)="homePage()">Home</button>
+        <!-- Onboard -->
+        <button id="options2" class="options-sub-block" (hover)="highlightOptions('options2')">Cart</button>
+        <!-- About Us -->
+        <button id="options3" class="options-sub-block" (click)="aboutUs()" (hover)="highlightOptions('options3')">About Us</button>
+        <!-- Contact Us -->
+        <button id="options4" class="options-sub-block" (hover)="highlightOptions('options4')">Contact Us</button>
+    </div>
+
+</div>
+
+
+  <!---------- Popup container for Customer Care------->
+  <div  *ngIf="isContactUsDisplayed==true" class="popup-container-universal">
+    
+    <!-- Header panel -->
+    <div class="popup-header-universal">
+        <!--Header text-->
+        <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>CUSTOMER CARE</b></div>
+        <!--Close button-->
+        <button class="popup-header-close" type="button" (click)="closeContactUs()"><b>X</b></button>
+    </div>
+
+    <!-- Body container -->
+    <div class="popup-body-container">
+        <div class="popup-body-text">Customer Submit Query feature coming soon on our website!!!!</div>
+        <div class="popup-body-text">Meanwhile, for complaints, you can call us on mobile : <b>+91 8282828282</b></div>
+        <div class="popup-body-text">You can also mail to us on email : <b>foodCosta1223@gmail.com</b></div>
+          
+    </div>
+     <!--Image-->
+     <img class="popup-image" [src]="customerCareImage">
+     <!--OK Button-->
+     <button class="popup-body-ok-button" style="margin-top:40px" (click)="closeContactUs()"><b>OK</b></button>
+     <!--blank line-->
+     <div style="width:100%;color:#01183A">&nbsp;&nbsp;&nbsp;&nbsp;___________________________________________________________________</div>
+        
+</div>
+<!------------------------------------->
+
+

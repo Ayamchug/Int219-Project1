@@ -1,0 +1,309 @@
+
+<div class="universal" >
+    <!--upper panel-->
+    <div class="upper-pannel-universal">
+        <img src="/assets/images/logo.jpg"class="img">
+        <!-- Resturant name container -->
+        <div class="restoName">
+            <p style="height:10px;width: 300px;margin-top: 0px;color: aliceblue; font-size: 1.2em;font-family: cursive;">Food Costa</p>
+            <p style="width: 300px;margin-top:  0px;color: aliceblue;font-size: 1.65em;"><u><b>SAVOURY BITES</b></u></p>
+        </div>
+        <!-- Options container -->
+        <div class="options">
+            <!-- Sign-In -->
+            <button id="options1" class="options-sub-block" (click)="homePage()">Home</button>
+            <!-- Onboard -->
+            <button id="options2" class="options-sub-block" (click)="displayCart()">Cart({{cartBox.length}})</button>
+            <!-- About Us -->
+            <button id="options3" class="options-sub-block" (click)="aboutUs()" (hover)="highlightOptions('options3')">About Us</button>
+            <!-- Contact Us -->
+            <button id="options4" class="options-sub-block" (click)="displayContactUs()">Contact Us</button>
+        </div>    
+    </div>
+    
+    <!------------Curated List------------------>
+    <!-- Curated List display  -->
+    <div class="curated-universal-container">
+        <!-- Curated List label -->
+        <div class="curatedLabel"><i>CURATED DISHES OF THE WEEK</i></div>
+
+        <!-- Blocks -->
+        <div *ngFor="let index of curatedDishList" style="display: inline-block;">
+            <app-dish-box-in-curation [dishTypeImg]='index.Image' [text]='index.name' (click)="displayDish(index)"></app-dish-box-in-curation>
+        </div>
+    </div>
+    <!------------------------------------------->
+
+    <!-------------Vouchers List---------------------->
+    <!-- Vouchers List display  -->
+    <div class="curated-universal-container" style="margin-top:10px">
+        <!-- Vouchers List label -->
+        <div class="curatedLabel"><i>VOUCHERS SOOTHING YOUR BUDGET</i></div>
+
+        <!-- Blocks -->
+        <div *ngFor="let index of voucherList" style="display: inline-block;">
+            <app-dish-box-in-curation [dishTypeImg]='index.image' (click)="displayVoucher(index)" [text]='index.name'></app-dish-box-in-curation>
+        </div>
+    </div>
+    <!------------------------------------------->
+
+    <!---------- Popup container for Vouchers------->
+    <div  *ngIf="selectedVoucher.length != 0" class="popup-container-universal">
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>{{ selectedVoucher.name }}</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closePopUp()"><b>X</b></button>
+        </div>
+        <!--body panel-->
+        <div class="popup-body-universal">
+            <!-- Body container -->
+            <div class="popup-body-container">
+                <!--Dish Description-->
+                <div class="popup-body-text">{{ selectedVoucher.description }}</div>
+                <!--DishType-->
+                <div class="popup-body-text"><b>Dish Type : </b>{{ selectedVoucher.TnC }}</div>
+                <div class="popup-body-text"><b></b></div>
+
+            </div>
+            <!--Image-->
+            <img class="popup-image" [src]="selectedVoucher.image">
+
+            <!--OK button-->
+            <button class="popup-body-ok-button" (click)="closePopUp()"><b>OK</b></button>
+             
+        </div>
+        </div>
+    <!------------------------------------->
+
+
+    <!-------------Steppers------------------->
+    <div class="stepper-universal">
+
+        <!-- Dish List label -->
+        <div class="curatedLabel"><i>CHOOSE FROM VARIETY OF ETHNICITIES</i></div>
+
+        <!-- Stepper container -->
+        <div class="stepper-container">
+            <button class="stepper-box" *ngFor="let eth of ethnicity" [id]="eth" (click)="activateStepper(eth)">{{ eth }}</button>
+        </div>
+
+        <!-- Dish types -->
+        <app-dish-box-in-curation *ngFor="let sel of selectedDishes" (id)="sel.id" [text]="sel.name" [dishTypeImg]="sel.Image"
+            (click)="displayDish(sel)"></app-dish-box-in-curation>
+
+        <!--blank space to make virtual padding-->
+        <div class="transparent-text">______________________________________</div>
+        <div class="transparent-text">______________________________________</div>
+        <div class="transparent-text" style="color:aliceblue;opacity:70%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;___________________________________________________________________________________________________________________________</div>
+        <div class="transparent-text">______________________________________</div>
+        <div class="transparent-text">______________________________________</div>
+        <div class="transparent-text">______________________________________</div>
+        
+    </div>
+    <!---------------------------------------->
+
+    <!---------- Popup container for Dishes------->
+    <div  *ngIf="selDish.length != 0" class="popup-container-universal">
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>{{ selDish.name }}</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeDishPopUp()"><b>X</b></button>
+        </div>
+        <!--body panel-->
+        <div class="popup-body-universal">
+            <!-- Body container -->
+            <div class="popup-body-container">
+                <!--Dish Description-->
+                <div class="popup-body-text">{{ selDish.description }}</div>
+                <!--DishType-->
+                <div class="popup-body-text"><b>Dish Type : </b>{{ selDish.dishType }}</div>
+                <!--Price-->
+                <div class="popup-body-text"><b>Price : </b>{{ selDish.price }}</div>
+                <div class="popup-body-text"><b></b></div>
+
+            </div>
+            <!--Image-->
+            <img class="popup-image" [src]="selDish.Image">
+
+            <!--OK button-->
+            <button class="popup-body-ok-button" (click)="closeDishPopUp()"><b>OK</b></button>
+             <!--Add to Cart button-->
+             <button [id]="'AddToCartButton'" class="popup-body-ok-button" (click)="addToCart(selDish)"><b>Add to Cart</b></button>
+        </div>
+        </div>
+    <!------------------------------------->
+
+
+
+    <!---------- Popup container for Cart------->
+    <div  *ngIf="cartBox.length != 0 && isCartDisplayed==true" class="popup-container-universal">
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>YOUR BASKET DETAILS</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeCart()"><b>X</b></button>
+        </div>
+        <!--body panel-->
+        <div *ngFor = 'let cart of cartBox' class="popup-body-universal">
+            <!-- Body container -->
+            <div class="popup-body-container">
+                <!--DishType-->
+                <div class="popup-body-text"><b>Dish : </b>{{ cart.name }}</div>
+                <!--Price-->
+                <div class="popup-body-text"><b>Price : </b>{{ cart.price }}</div>
+                <!--Quantity-->
+                <div class="popup-body-text"><b>Qty : </b>
+                    <select class="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="popup-body-text"><b></b></div>
+            </div>
+            <!--Image-->
+            <img class="popup-image" [src]="cart.Image" style="width:100px;height:100px">
+            <!--blank line-->
+            <div style="width:100%;color:#01183A">&nbsp;&nbsp;&nbsp;&nbsp;___________________________________________________________________</div>
+        </div>
+
+         <!--Checkout button-->
+         <button class="popup-body-ok-button" (click)="enterShipmentInfo()"><b>CHECKOUT</b></button>
+         <!--Cancel button-->
+         <button class="popup-body-ok-button" (click)="closeCart()"><b>CANCEL</b></button>
+    </div>
+
+
+    <!--Empty cart popup----->
+    <div class="no-value-in-cart-universal" *ngIf="cartBox.length == 0 && isCartDisplayed==true">
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>No items in Cart</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeCart()"><b>X</b></button>
+        </div>
+    </div>
+    <!----->
+    
+    <!---------- Popup container for Shipment------->
+    <div  *ngIf="isShippingAddressDisplayed==true" class="popup-container-universal">
+    
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>SHIPMENT DETAILS</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeShipment()"><b>X</b></button>
+        </div>
+
+        <!-- Body container -->
+        <div class="popup-body-container" style="width:100%">
+            <!--FirstName-->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Please enter FirstName</div>
+            <input type="text" placeholder="----------First Name----------" class="popup-body-input">
+        
+            <!--LastName-->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Please enter LastName</div>
+            <input type="text" placeholder="----------Last Name-----------" class="popup-body-input">
+        
+            <!--Mobile Number-->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Please enter Mobile Number</div>
+            <input type="text" placeholder="---------Mobile Number--------" class="popup-body-input">
+        
+            <!--Email -->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Please enter EmailID</div>
+            <input type="text" placeholder="---------Email ID--------------" class="popup-body-input">
+            
+            <!--Address Line 1 -->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Delivery Address Line 1</div>
+            <input type="text" placeholder="---------Line 1-----------------" class="popup-body-input">
+
+            <!--Address Line 2 -->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Delivery Address Line 2</div>
+            <input type="text" placeholder="---------Line 2-----------------" class="popup-body-input">
+
+            <!--Address Line 3 -->
+            <div class="popup-body-container" style="width:40%;margin-left:20px">Delivery Address Line 3</div>
+            <input type="text" placeholder="---------Line 3-----------------" class="popup-body-input">
+            
+            <!--Checkout button-->
+            <button class="popup-body-ok-button" style="width:200px" (click)="placeOrder()"><b>PLACE ORDER</b></button>
+            <!--Cancel button-->
+            <button class="popup-body-ok-button" (click)="closeShipment()"><b>CANCEL</b></button>
+
+        </div>
+
+            
+    </div>
+    <!------------------------------------->
+
+    <!---------- Popup container for Customer Care------->
+    <div  *ngIf="isContactUsDisplayed==true" class="popup-container-universal">
+    
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>CUSTOMER CARE</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeContactUs()"><b>X</b></button>
+        </div>
+
+        <!-- Body container -->
+        <div class="popup-body-container">
+            <div class="popup-body-text">Customer Submit Query feature coming soon on our website!!!!</div>
+            <div class="popup-body-text">Meanwhile, for complaints, you can call us on mobile : <b>+91 8282828282</b></div>
+            <div class="popup-body-text">You can also mail to us on email : <b>foodCosta1223@gmail.com</b></div>
+              
+        </div>
+         <!--Image-->
+         <img class="popup-image" [src]="customerCareImage">
+         <!--OK Button-->
+         <button class="popup-body-ok-button" style="margin-top:40px" (click)="closeContactUs()"><b>OK</b></button>
+         <!--blank line-->
+         <div style="width:100%;color:#01183A">&nbsp;&nbsp;&nbsp;&nbsp;___________________________________________________________________</div>
+            
+    </div>
+    <!------------------------------------->
+
+
+     <!---------- Popup container for Order COnfirmation------->
+     <div  *ngIf="orn != null" class="popup-container-universal">
+    
+        <!-- Header panel -->
+        <div class="popup-header-universal">
+            <!--Header text-->
+            <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>ORDER CONFIRMATION</b></div>
+            <!--Close button-->
+            <button class="popup-header-close" type="button" (click)="closeOrderConfirmation()"><b>X</b></button>
+        </div>
+
+        <!-- Body container -->
+        <div class="popup-body-container">
+            <div class="popup-body-text">Bingo!!! Your order has been placed successfully!!!!</div>
+            <div class="popup-body-text">Order Number : <b>{{ orn }}</b></div>
+            <div class="popup-body-text">ETA : <b>30 minutes</b></div>
+            <div class="popup-body-text">Meanwhile, you can tracn your order by dialing <b>+91 8282828282</b></div>
+            
+        </div>
+         <!--Image-->
+         <img class="popup-image" [src]="orderConfirmationImage">
+         <!--OK Button-->
+         <button class="popup-body-ok-button" style="margin-top:40px" (click)="closeOrderConfirmation()"><b>OK</b></button>
+         <!--blank line-->
+         <div style="width:100%;color:#01183A">&nbsp;&nbsp;&nbsp;&nbsp;___________________________________________________________________</div>
+            
+    </div>
+
+</div>
+
+
+
+

@@ -1,0 +1,161 @@
+
+.universal{
+    background-color: #01183A;
+    height: auto;
+    width: 1340px;
+    top:0px;
+    display: inline-block;
+}
+
+
+.intro-text{
+    display: inline-block;
+    height:auto;
+    width:600px;
+}
+
+.intro-text-heading{
+    margin-left: 145px;
+    margin-top: 20px;
+    color: aliceblue;
+    opacity: 70%;
+    font-size: 2.5em;
+    text-shadow: 0 0 30px #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.intro-text-body{
+    margin-left: 150px;
+    color: aliceblue;
+    opacity: 80%;
+    margin-top: 40px;
+    font-size: 1.4em;
+    font-family: Geneva;
+    font-weight: 10;
+    backdrop-filter: blur(10px);
+}
+
+.transparent-text{
+    color: transparent;
+}
+
+.ambience{
+    display: inline-block;
+    height:300px;
+    width:450px;
+    margin-top:50px;
+    margin-left: 100px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+}
+
+.line{
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.location-container-universal{
+    height:auto;
+    margin-left: 150px;
+    margin-right: 150px; 
+    margin-top:40px;
+    display: inline-block;
+}
+
+.location-container{
+    height:35px;
+    width: 150px;
+    border-color: transparent;
+    font-size: 1.25em;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 30px;
+    display: inline-block;
+    color: aliceblue;
+    opacity: 60%;
+    background-color: transparent;
+    font-family: Geneva;
+}
+
+
+
+/*************** Popup styling ******************/
+.address-popup {
+    display: 'block';
+    position: fixed;
+    max-height: 500px;
+    margin-top:150px;
+    width:570px;
+    height:auto;
+    z-index: 1;
+    border-radius: 8px;
+    left: 300px;
+    top: 0;
+    background-color: aliceblue;
+   }
+  
+
+  
+   .popup-header-universal{
+     height:42px;
+     background-color: #01183A;
+     width:98.5%;
+     margin-top: 7px;
+     margin-left: 4px;
+     border-color: yellow;
+     border-width: 10px;
+     border-radius: 5px;
+   }
+  
+   .popup-header-text{
+     width:93%;
+     background-color: transparent;
+     border-color: #e6f3ff;
+     border-radius: 10px;
+     color: #e6f3ff;
+     font-size: 1.2em;
+     font-family: 'Times New Roman', Times, serif;
+     display: inline-block;
+   }
+  
+   .popup-header-close{
+     height:30px;
+     width:5.4%;
+     display: inline-block;
+     margin-left: 4px;
+     margin-top: 5px;
+     color: aliceblue;
+     border-radius: 5px;
+     border-color: aliceblue;
+     opacity: 300%;
+     background-color: transparent;
+     font-size: larger;
+     font-family: serif;
+   }
+  
+   
+  .popup-body-container{
+    width:50%;
+    height:auto;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+   .popup-body-text{
+     height:auto;
+     width:100%;
+     background-color: transparent;
+     margin-top: 10px;
+     margin-left: 10px;
+     margin-right: 10px;
+     color: #01183A;
+     font-size: 1.2em;
+     font-family: 'Times New Roman', Times, serif;
+     display: inline-block;
+   }
+   /* ************************************************* */
+  
+  

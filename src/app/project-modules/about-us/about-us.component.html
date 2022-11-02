@@ -1,0 +1,73 @@
+<div class="universal" >
+
+    <!--upper panel-->
+    <app-upper-pannel></app-upper-pannel>
+
+    <!-- Food Court intro text -->
+   <div class="intro-text">
+       <!--heading-->
+       <div class="intro-text-heading">
+           <b>About Us</b>
+       </div>
+
+       <!--body-->
+       <div class="intro-text-body"><i>
+            We at Savoury Bites thrive to provide mouth-watering indigenous as well as exotic cuisines
+            soothing to one's senses. Relish your favourite dish you deserve after a long exhausting day at work.
+            Our ambience as well as delivery service is well praised by customers.</i>
+       </div>
+
+       <div class="transparent-text">______________________________________</div>
+
+       <div class="intro-text-body">
+        <i>Currently we function at following locations:</i>
+       </div>
+       
+   </div>
+
+
+   <!--Image container-->
+   <img class="ambience" src="/assets/images/ambience.jpg">
+
+   <!--locations-->
+   <div class="location-container-universal">
+        <button *ngFor="let index of locationList" class="location-container" (click)="displayAddress(index.address)">{{ index.city }}</button>
+
+        <!--Address popup----->
+        <div class="address-popup" *ngIf="isAddressDisplayed==true">
+            <!-- Header panel -->
+            <div class="popup-header-universal">
+                <!--Header text-->
+                <div class="popup-header-text">&nbsp;&nbsp;&nbsp;&nbsp;<b>Address Details</b></div>
+                <!--Close button-->
+                <button class="popup-header-close" type="button" (click)="closeAddress()"><b>X</b></button>
+            </div>
+
+            <!--body panel-->
+            <div class="popup-body-universal">
+                <!-- Body container -->
+                <div class="popup-body-container" style="width:100%;height:auto">
+                    <!--DishType-->
+                    <div class="popup-body-text" style="width: 100%">{{ displayedAddress }}</div>
+                    <!--Price-->
+                </div>
+            </div>
+    </div>
+
+   
+</div>
+<!----->
+
+
+   <!--blank space to make virtual padding-->
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text" style="color:aliceblue;opacity:70%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________________________________________________________________________________________________________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+   <div class="transparent-text">______________________________________</div>
+
+</div>
+

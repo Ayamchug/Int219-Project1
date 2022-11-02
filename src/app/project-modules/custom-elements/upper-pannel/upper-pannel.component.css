@@ -1,0 +1,153 @@
+.upper-pannel-universal{
+    margin-left: 90px;
+    margin-top: 100px;
+    height:150px
+}
+
+.img{
+    width:100px;
+    height:80px;
+    display:inline-block;
+    margin-top:  40px;
+}
+
+.restoName{
+    margin-left: 20px;
+    margin-top:0px;
+    display: inline-block;
+    width: 400px;
+    height: 80px;
+}
+
+.options{
+    display: inline-block;
+    margin-left: 100px;
+    background-color: transparent;
+}
+
+.options-sub-block{
+    display: inline-block;
+    color:aliceblue;
+    margin-left: 20px;
+    font-size: 1.4em;
+    opacity: 70%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+
+/*************** Popup styling ******************/
+.popup-container-universal {
+    display: 'block';
+    position: fixed;
+    max-height: 500px;
+    margin-top:150px;
+    width:570px;
+    height:auto;
+    z-index: 1;
+    border-radius: 8px;
+    left: 300px;
+    top: 0;
+    overflow: scroll; /* Enable scroll if needed */
+    background-color: aliceblue;
+   }
+  
+   .no-value-in-cart-universal {
+    display: 'block';
+    position: fixed;
+    margin-top:150px;
+    width: 500px;
+    height:55px;
+    z-index: 1;
+    border-radius: 8px;
+    left: 500px;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: aliceblue;
+    animation: popup 5.0s;
+   }
+  
+   .popup-header-universal{
+     height:42px;
+     background-color: #01183A;
+     width:98.5%;
+     margin-top: 7px;
+     margin-left: 4px;
+     border-color: yellow;
+     border-width: 10px;
+     border-radius: 5px;
+   }
+  
+   .popup-header-text{
+     width:93%;
+     background-color: transparent;
+     border-color: #e6f3ff;
+     border-radius: 10px;
+     color: #e6f3ff;
+     font-size: 1.2em;
+     font-family: 'Times New Roman', Times, serif;
+     display: inline-block;
+   }
+  
+   .popup-header-close{
+     height:30px;
+     width:5.4%;
+     display: inline-block;
+     margin-left: 4px;
+     margin-top: 5px;
+     color: aliceblue;
+     border-radius: 5px;
+     border-color: aliceblue;
+     opacity: 300%;
+     background-color: transparent;
+     font-size: larger;
+     font-family: serif;
+   }
+  
+   .popup-body-container{
+    width:50%;
+    height:auto;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+  }
+  
+   .popup-body-text{
+     height:auto;
+     width:100%;
+     background-color: transparent;
+     margin-top: 10px;
+     margin-left: 10px;
+     margin-right: 10px;
+     color: #01183A;
+     font-size: 1.2em;
+     font-family: 'Times New Roman', Times, serif;
+     display: inline-block;
+   }
+   
+   .popup-image{
+    display: inline-block;
+    width:40%;
+    height:160px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+   }
+  
+   .popup-body-ok-button{
+     width:150px;
+     height:40px;
+     border-radius: 23px;
+     margin-left: 20px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     align-content:center;
+     background-color: #01183A;
+     color: aliceblue;
+     font-size: 1.2em;
+     display: inline-block;
+   }
+   /* ************************************************* */
+  

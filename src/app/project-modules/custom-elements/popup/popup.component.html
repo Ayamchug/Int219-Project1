@@ -1,0 +1,16 @@
+<div class="popup-container-universal" (id)="id">
+    <!-- Header panel -->
+            <div class="popup-header-universal">
+                <!--Header text-->
+                <div class="popup-header-text">|    <b>{{ header_text }}</b></div>
+                <!--Close button-->
+                <button class="popup-header-close" type="button" (click)="closePopUp()"><b>X</b></button>
+            </div>
+            <!--body panel-->
+            <div class="popup-body-universal">
+                <!--body text-->
+                <div class="popup-body-text">{{ body_text }}</div>
+                <!--OK button-->
+                <button class="popup-body-ok-button" (click)="closePopUp()"><b>OK</b></button>
+            </div>
+	</div>

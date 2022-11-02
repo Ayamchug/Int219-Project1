@@ -1,0 +1,48 @@
+.container-outer{
+    width: 200px;
+    height : 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 25px;
+    border-radius: 5px;
+    background-color: 40%;
+    display: inline-block;
+}
+
+.image-container{
+    margin-top : 4%;
+    width: 93.3%;
+    margin-left : 3%;
+    height : 85%;
+    background-color : white;
+    border-radius:15px;
+}
+.text-container{
+    margin-top : 3%;
+    width: 93.3%;
+    margin-left : 3%;
+    height : auto;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    color:aliceblue;
+    opacity:70%;
+    background-color : transparent
+}
+.dish-image{
+    width:100%;
+    height:100%
+}
+.dot-veg-nonveg{
+    width:2.5%;
+    height:5%;
+    top:1%;
+    left:2%;
+    margin-top:0.2%;
+    position: absolute
+}
+.text{
+    font-size:1em;
+    margin-left:5%;
+    margin-top: 2%;
+    color: white
+}
